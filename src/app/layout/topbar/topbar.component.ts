@@ -1,6 +1,7 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { DrawerService } from 'src/app/shared/drawer.service';
 
 @Component({
   selector: 'app-topbar',
@@ -15,7 +16,19 @@ export class TopbarComponent {
 
   public isMobile = false;
 
-  constructor(private observer: BreakpointObserver) {}
+  constructor(private observer: BreakpointObserver,private drawerService: DrawerService) {
+    this.drawerService.isDrawerOpen$.subscribe((isOpen) => {
+      this.isDrawerOpen = isOpen;
+    });
+  }
+
+  isDrawerOpen: boolean = false;
+
+  
+
+  toggleDrawer(): void {
+    this.drawerService.toggleDrawer();
+  }
 
   ngAfterViewInit() {
     this.observer
@@ -39,5 +52,13 @@ export class TopbarComponent {
 
   toggleSidenav() {
     this.sidenavToggle.emit();
+    this.isSidenavOpen = !this.isSidenavOpen;
   }
+  isSidenavOpen: boolean = false; // Tracks sidenav state
+  activeTab: string = 'home'; // Default active tab
+
+  setActiveTab(tab: string) {
+    this.activeTab = tab;
+  }
+
 }

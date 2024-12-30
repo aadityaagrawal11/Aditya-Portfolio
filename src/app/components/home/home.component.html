@@ -1,33 +1,34 @@
 <div class="container" id="home">
   <div class="social-icons" *ngIf="isMobile">
-
     <div class="button">
-      <a href="https://www.facebook.com/aadityaagrawal11/">
-      <div class="icon">
-        <i class="bx bxl-facebook"></i>
-      </div>
-      <span>Facebook</span></a>
+      <a href="https://www.facebook.com/aadityaagrawal11/" target="_blank">
+        <div class="icon">
+          <i class="bx bxl-facebook"></i>
+        </div>
+        <span>Facebook</span></a
+      >
     </div>
 
     <div class="button">
-      <a href="https://www.linkedin.com/in/aadityaagrawal11/">
+      <a href="https://www.linkedin.com/in/aadityaagrawal11/" target="_blank">
         <div class="icon"><i class="bx bxl-linkedin"></i></div>
         <span>Linkedin</span></a
       >
     </div>
 
     <div class="button">
-      <a href="https://www.instagram.com/aadityaagrawal11/">
-      <div class="icon"><i class="bx bxl-instagram-alt"></i></div>
-      <span>Instagram</span></a>
+      <a href="https://www.instagram.com/aadityaagrawal11/" target="_blank">
+        <div class="icon"><i class="bx bxl-instagram-alt"></i></div>
+        <span>Instagram</span></a
+      >
     </div>
 
     <div class="button">
-      <a href="https://github.com/aadityaagrawal11/">
-      <div class="icon"><i class="bx bxl-github"></i></div>
-      <span>Github</span></a>
+      <a href="https://github.com/aadityaagrawal11/" target="_blank">
+        <div class="icon"><i class="bx bxl-github"></i></div>
+        <span>Github</span></a
+      >
     </div>
-
   </div>
 
   <div class="home">
@@ -35,25 +36,28 @@
     <div class="info">
       <p>
         I'm a Software Engineer with specialization in Frontend Development and
-        Product Development. I have worked on many types of Full-Stack projects from
-        fintech applications to Ecommerce booking platforms and have designed
-        full application UI's and collaborated with cross functioning teams.
+        Product Development. I have worked on many types of Full-Stack projects
+        from fintech applications to Ecommerce booking platforms and have
+        designed full application UI's and collaborated with cross functioning
+        teams.
       </p>
-      <img class="logo"  src="../../../assets/img/adi.jpg" alt="header-icon"/>
-      <div class="">
-        <div class="mailId" >
-          <mat-icon>email</mat-icon> aadityaagrawal11@gmail.com</div>
+      <img class="logo" src="../../../assets/img/adi.jpg" alt="header-icon" />
+      <div class="" *ngIf="isMobile">
+        <div class="mailId">
+          <mat-icon>email</mat-icon> aadityaagrawal11@gmail.com
         </div>
+      </div>
     </div>
-    
+
     <div class="btn">
-      <a mat-fab extended   href="#contact"> Let's Connect</a>   
-      <a  mat-fab extended 
-      href="https://drive.google.com/file/d/1S21EVTdLAtiAurZdeIWTQTazFnmhv8l2/view?usp=sharing">Get Resume</a>
+      <a mat-fab extended href="#contact"> Let's Connect</a>
+      <a
+        mat-fab
+        extended
+        href="https://drive.google.com/file/d/1S21EVTdLAtiAurZdeIWTQTazFnmhv8l2/view?usp=sharing"
+        target="_blank"
+        >Get Resume</a
+      >
     </div>
-
-   
-       
-
   </div>
 </div>

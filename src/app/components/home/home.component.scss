@@ -19,8 +19,8 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      left: 0;
-      top: 25%;
+      left: 1%;
+      top: 35%;
       height: fit-content;
 
       .button {
@@ -66,7 +66,7 @@
       }
 
       .button:hover {
-        width: 13em;
+        width: 12em;
         overflow: hidden;
 
         .icon i {
@@ -123,8 +123,8 @@
       display: grid;
       padding: 1rem 2rem;
       position: absolute;
-      top: 40%;
-      left: 50%;
+      top: 45%;
+      left: 53%;
       transform: translate(-50%, -50%);
       width: 90%;
       max-width: 80rem;
@@ -166,12 +166,13 @@
           border-radius: 45%;
           margin-left: 20%;
           margin-top: 7%;
+          box-shadow: #8755ed -1px -2px 6px 6px
         }
         .mailId {
           display: flex;
           transform: rotate(90deg);
-          right: -225px;
-          bottom: 350px;
+          right: -12.5rem;
+          bottom: 21.8rem;
           position: absolute;
           font-size: large;
           font-weight: 800;
@@ -211,7 +212,7 @@
 //pc
 :host.pc {
   .container {
-    // clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0% 90%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0% 90%);
 
     .home {
       grid-template-rows: 1fr 1fr 0.5fr;
@@ -228,9 +229,9 @@
       .info {
         // max-width: 50rem;
         p {
-          font-size: 1.5rem;
-          // -webkit-line-clamp: 3;
-          line-height: 1.6;
+          font-size: 1.1rem;
+          line-height: 1.4;
+           font-weight: 500;
         }
       }
     }

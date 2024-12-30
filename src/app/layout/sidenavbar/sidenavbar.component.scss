@@ -11,12 +11,12 @@ mat-drawer-content {
 
 .circularDrawer {
   position: fixed;
-  width: 100%;
-  clip-path: circle(400px at right 30px);
+  width: 50%;
+  clip-path: circle(400px at right 40px);
 
   .drawerInfo {
     display: flex;
-    // background-color: var(--gray-light);
+    background-color: var(--gray-light);
     height: 100%;
     align-items: center;
     justify-content: center;
@@ -38,7 +38,8 @@ mat-drawer-content {
           text-decoration: none;
           padding: 0.2em 1.2em 0.9em 1.2em;
           border-radius: 10px 10px 0 0;
-          color: rgb(39, 39, 39);
+          // color: rgb(39, 39, 39);
+          color: var(--white);
           transition: all 0.3s ease;
           position: relative;
           z-index: 1;
@@ -71,7 +72,15 @@ mat-drawer-content {
     }
   }
 }
-
+.drawerInfo ul li a.active {
+  // background: linear-gradient(to right, #356980, #0fa3d4, #a8cad8);
+  background-color: var(--dark-gray);
+  color: var(--white);
+  transition: all 0.3s ease-out;
+  width: 100%;
+  height: 60px;
+  border-radius: 10px 10px 0 0;
+}
 @media (300px <= width <= 400px) {
   .circularDrawer {
     clip-path: circle(350px at right 30px);

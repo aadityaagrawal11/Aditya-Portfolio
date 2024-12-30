@@ -9,16 +9,17 @@
     <span class="spacer"></span>
     <div class="navItems" *ngIf="!isMobile">
       <ul>
-        <li><a  href="#home" routerLinkActive="active">HOME</a></li>
-        <li><a href="#about" routerLinkActive="active">ABOUT</a></li>
-        <li><a href="#projects" routerLinkActive="active">PROJECTS</a></li>
-        <li><a href="#contact" routerLinkActive="active">CONTACT</a></li>
+        <li><a href="#home" [class.active]="activeTab === 'home'" (click)="setActiveTab('home')">HOME</a></li>
+        <li><a href="#about" [class.active]="activeTab === 'about'" (click)="setActiveTab('about')">ABOUT</a></li>
+        <li><a href="#projects" [class.active]="activeTab === 'projects'" (click)="setActiveTab('projects')">PROJECTS</a></li>
+        <li><a href="#contact" [class.active]="activeTab === 'contact'" (click)="setActiveTab('contact')">CONTACT</a></li>
       </ul>
     </div>
-
-    <div class="sidenav-toggle" (click)="toggleSidenav()" *ngIf="isMobile" >
-      <button mat-icon-button color="primary" >
-        <mat-icon>menu</mat-icon>
+    
+    <div class="sidenav-toggle" (click)="toggleDrawer()" *ngIf="isMobile" >
+      <button mat-icon-button color="secondary" >
+        <!-- <mat-icon>menu</mat-icon> -->
+        <mat-icon>{{ isDrawerOpen ? 'close' : 'menu' }}</mat-icon>
       </button>
     </div>
   </mat-toolbar>
