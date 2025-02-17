@@ -53,6 +53,7 @@
           white-space: normal;
           display: -webkit-box;
           -webkit-line-clamp: 4;
+          line-clamp: 4;
           -webkit-box-orient: vertical;
           overflow: hidden;
           text-align: center;
@@ -147,6 +148,7 @@
   
         .heading-sec__sub {
           -webkit-line-clamp: 2;
+          line-clamp: 2;
           font-weight: 500;
           font-size: 1.2rem;
           max-width: 50rem;

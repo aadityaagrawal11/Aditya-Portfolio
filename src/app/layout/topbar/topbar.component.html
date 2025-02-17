@@ -2,8 +2,9 @@
   <mat-toolbar>
     <div class="header-logo">
       <a href="#home">
-      <img class="logo" src="../../../assets/img/adi.jpg" alt="header-icon"/></a>
-      <p style="margin-left:3%; " class="nav-title"> &lt; Aditya Agrawal /&gt;</p>
+      <img class="logo" src="../../../assets/img/aditya.jpg" alt="header-icon"/></a>
+      <!-- <p style="margin-left:3%; " class="nav-title" *ngIf="!isMobile"> &lt; Aditya Agrawal /&gt;</p> -->
+      <p style="margin-left:3%; " class="nav-title" *ngIf="!isMobile"> {{displayText}}</p>
     </div>
 
     <span class="spacer"></span>

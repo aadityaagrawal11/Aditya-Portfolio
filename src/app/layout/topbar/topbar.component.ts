@@ -15,16 +15,30 @@ export class TopbarComponent {
   @ViewChild(MatSidenav) sidenav!: MatSidenav;
 
   public isMobile = false;
-
+  fullText = "<Aditya Agrawal/>";
+  displayText = "";
+  index = 0;
+  
   constructor(private observer: BreakpointObserver,private drawerService: DrawerService) {
     this.drawerService.isDrawerOpen$.subscribe((isOpen) => {
       this.isDrawerOpen = isOpen;
     });
+    this.startAnimation();
   }
 
   isDrawerOpen: boolean = false;
 
-  
+  startAnimation() {
+    setInterval(() => {
+      if (this.index < this.fullText.length) {
+        this.displayText += this.fullText[this.index]; // Add next character
+        this.index++;
+      } else {
+        this.displayText = ""; // Reset and restart animation
+        this.index = 0;
+      }
+    }, 300); 
+  }
 
   toggleDrawer(): void {
     this.drawerService.toggleDrawer();

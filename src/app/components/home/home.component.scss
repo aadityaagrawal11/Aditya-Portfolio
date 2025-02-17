@@ -1,13 +1,15 @@
+
+
 :host {
   .container {
     display: flex;
     color: black;
     background: linear-gradient(
-        to right,
-        rgba(197, 226, 232, 0.8),
-        rgba(190, 185, 220, 0.8)
-      ),
-      url(../../../assets/img/common-bg.svg);
+      to right,
+      rgba(197, 226, 232, 0.8),
+      rgba(190, 185, 220, 0.8)
+    ),
+    url(../../../assets/img/common-bg.svg);
     background-position: center;
     height: 100vh;
     min-height: 50rem;
@@ -19,7 +21,7 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      left: 1%;
+      left: 1;
       top: 35%;
       height: fit-content;
 
@@ -28,7 +30,6 @@
         height: 60px;
         float: left;
         margin: 5px 0;
-
         background-color: #f06;
         border-radius: 50px;
         cursor: pointer;
@@ -66,14 +67,11 @@
       }
 
       .button:hover {
-        width: 12em;
+        width: 13em;
         overflow: hidden;
 
         .icon i {
           color: var(--white);
-        }
-        a {
-          text-decoration: none;
         }
       }
 
@@ -123,8 +121,8 @@
       display: grid;
       padding: 1rem 2rem;
       position: absolute;
-      top: 45%;
-      left: 53%;
+      top: 50%;
+      left: 50%;
       transform: translate(-50%, -50%);
       width: 90%;
       max-width: 80rem;
@@ -151,23 +149,30 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        max-width: 100rem;
 
         p {
-          width: 90%;
+          width: fit-content;
           font-size: 1rem;
           line-height: 1.5;
+          -webkit-line-clamp: 7;
+          line-clamp: 7;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          text-overflow: ellipsis;
+          overflow: hidden;
           color: #333;
           text-align: justify;
         }
         img {
-          height: 18rem;
-          // flex-basis: 30rem;
-          width: 24rem;
-          border-radius: 45%;
-          margin-left: 20%;
-          margin-top: 7%;
-          box-shadow: #8755ed -1px -2px 6px 6px
+          height: 17rem;
+          width: 17rem;
+          border-radius: 50%;
+          margin-left: 25%;
+          margin-top: 5%;
+          box-shadow: #bbabdb -1px -2px 6px 6px;
         }
+
         .mailId {
           display: flex;
           transform: rotate(90deg);
@@ -188,22 +193,32 @@
           animation: slideTop 1s ease forwards;
           color: #0e1a97;
         }
-      }
 
-      .btn {
-        place-self: start;
-        justify-self: center;
-        color: #fff;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-right: 27rem;
       }
-      a {
-        font-size: 1.2rem;
-        border: 2px solid rgb(0, 255, 234);
-        padding: 2rem;
-        margin: 0rem 1rem;
-        font-weight: 700;
+      .btn-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px; /* Adds space between buttons */
+        flex-wrap: wrap; /* Ensures buttons wrap on smaller screens */
+      }
+      .btn {
+        // place-self: start;
+        // justify-self: center;
+        display: flex;
+        
+
+        button {
+          width: 200px;
+          height: 50px;
+          background: #7843e9;
+          color: #fff;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          display: inline-block;
+          font-weight: 700;
+          border-radius: 5px;
+          box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+        }
       }
     }
   }
@@ -222,18 +237,21 @@
         font-size: 4.5rem;
         font-weight: 800;
         letter-spacing: 3px;
-        place-self: end;
+        // place-self: end;
         justify-self: center;
       }
 
       .info {
-        // max-width: 50rem;
+        max-width: 60rem;
         p {
-          font-size: 1.1rem;
+          font-size: 1.4rem;
+          -webkit-line-clamp: 7;
+          line-clamp: 7;
+          font-weight: 400;
           line-height: 1.4;
-           font-weight: 500;
         }
       }
     }
   }
 }
+

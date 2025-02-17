@@ -1,6 +1,6 @@
 .example-container {
   margin: 0 auto;
-  overflow: none;
+  overflow: hidden; // Fixing potential layout issues
 }
 
 mat-drawer-content {
@@ -11,12 +11,15 @@ mat-drawer-content {
 
 .circularDrawer {
   position: fixed;
-  width: 50%;
-  clip-path: circle(400px at right 40px);
+  width: 70%; // Adjust width for smaller screens
+  max-width: 300px; // Limit max width for mobile
+  height: 100vh;
+  // clip-path: circle(400px at right 40px);
+  transition: clip-path 0.3s ease-in-out;
 
   .drawerInfo {
     display: flex;
-    background-color: var(--gray-light);
+    background-color: #d2b0b0;
     height: 100%;
     align-items: center;
     justify-content: center;
@@ -25,53 +28,32 @@ mat-drawer-content {
       display: flex;
       list-style: none;
       flex-direction: column;
-      margin-top: -14rem;
-      margin-left: 7rem;
+      padding: 0;
+      margin: 0;
 
       li {
         margin: 1em;
 
         a {
-          font-size: 20px;
-          letter-spacing: 1px;
-          font-weight: 500;
+          font-size: 18px;
           text-decoration: none;
-          padding: 0.2em 1.2em 0.9em 1.2em;
-          border-radius: 10px 10px 0 0;
-          // color: rgb(39, 39, 39);
+          padding: 10px 15px;
+          border-radius: 10px;
           color: var(--white);
           transition: all 0.3s ease;
           position: relative;
           z-index: 1;
         }
 
-        a::before {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 41px;
-          border-radius: 10px 10px 0 0;
-          background: #853333;
-          transform-origin: bottom;
-          background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
-          transform: scaleY(0.05);
-          z-index: -1;
-          transition: all 0.4s;
-        }
-
-        a:hover::before {
-          transform: scaleY(1.1);
-        }
-
         a:hover {
+          background: var(--dark-gray);
           color: var(--white);
         }
       }
     }
   }
 }
+
 .drawerInfo ul li a.active {
   // background: linear-gradient(to right, #356980, #0fa3d4, #a8cad8);
   background-color: var(--dark-gray);
@@ -81,66 +63,40 @@ mat-drawer-content {
   height: 60px;
   border-radius: 10px 10px 0 0;
 }
-@media (300px <= width <= 400px) {
+
+// Responsive Fixes
+@media (max-width: 600px) {
   .circularDrawer {
-    clip-path: circle(350px at right 30px);
+    width: 80%;
+    max-width: 280px;
+    // clip-path: circle(100%);
+    right: 0;
+    height: 100vh;
+    transition: all 0.3s ease;
 
     .drawerInfo {
       ul {
-        margin-top: -29rem;
-        margin-left: 9rem;
+        margin-top: 0;
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
       }
     }
   }
 }
 
-@media (400px <= width <= 500px) {
+@media (max-width: 400px) {
   .circularDrawer {
-    clip-path: circle(450px at right 30px);
-
-    .drawerInfo {
-      ul {
-        margin-top: -26rem;
-        margin-left: 7rem;
-      }
-    }
+    width: 90%;
+    max-width: 250px;
   }
-}
 
-@media (500px <= width <= 600px) {
-  .circularDrawer {
-    clip-path: circle(550px at right 30px);
-
-    .drawerInfo {
-      ul {
-        margin-top: -20rem;
-        margin-left: 7rem;
-      }
-    }
+  .drawerInfo ul {
+    padding: 10px;
   }
-}
-@media (600px <= width <= 700px) {
-  .circularDrawer {
-    clip-path: circle(650px at right 30px);
 
-    .drawerInfo {
-      ul {
-        margin-top: -18rem;
-        margin-left: 7rem;
-      }
-    }
-  }
-}
-
-@media (700px <= width <= 800px) {
-  .circularDrawer {
-    clip-path: circle(750px at right 30px);
-
-    .drawerInfo {
-      ul {
-        margin-top: -12rem;
-        margin-left: 7rem;
-      }
-    }
+  .drawerInfo ul li a {
+    font-size: 16px;
+    padding: 8px 12px;
   }
 }
